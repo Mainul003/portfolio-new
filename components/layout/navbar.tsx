@@ -49,7 +49,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="/cv.pdf"
+            href="/cv-2026.pdf"
             download
             className="flex items-center gap-2 text-sm bg-violet-600 hover:bg-violet-700 text-white px-4 py-1.5 rounded-full transition-colors"
           >
@@ -79,7 +79,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a href="/cv.pdf" download className="text-violet-600 font-semibold">
+          <a href="/cv-2026.pdf" download className="text-violet-600 font-semibold">
             Download CV
           </a>
         </div>

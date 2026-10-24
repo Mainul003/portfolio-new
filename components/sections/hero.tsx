@@ -93,7 +93,7 @@ export default function HeroSection() {
               Get in Touch
             </a>
             <a
-              href="/cv.pdf"
+              href="/cv-2026.pdf"
               download
               className="flex items-center gap-2 px-6 py-2.5 border border-stone-300 hover:border-violet-400 text-stone-600 hover:text-violet-700 rounded-full text-sm font-medium transition-all duration-200 bg-white hover:bg-violet-50"
             >
