@@ -12,7 +12,7 @@ export interface Paper {
   title: string;
   conference?: string;
   location?: string;
-  status: "Under Review" | "Published" | "Accepted";
+  status: "Under Review" | "Published" | "Accepted" | "Research Project";
   description?: string;
   links?: { label: string; href: string }[];
   paperId?: string;
@@ -26,8 +26,10 @@ export interface Paper {
 export interface ExperienceItem {
   role: string;
   company: string;
+  employerFirst?: boolean;
   period: string;
-  description: string;
+  description?: string;
+  highlights?: string[];
   tags: string[];
   type: "industry" | "academia";
 }

@@ -2,19 +2,72 @@ import type { SkillCategory } from "./types";
 
 export const skills: SkillCategory[] = [
   {
-    label: "Project Management",
-    skills: ["Agile/Scrum", "JIRA", "Sprint Planning", "Risk Management", "Budget Management", "Stakeholder Management", "PMBOK", "Waterfall"],
+    label: "API & Software Testing",
+    skills: [
+      "REST API Testing",
+      "Postman",
+      "Functional Testing",
+      "Integration Testing",
+      "Regression Testing",
+      "Negative Testing",
+      "Test Case Design",
+      "Test Planning",
+      "Manual Testing",
+      "Defect Management",
+    ],
   },
   {
-    label: "Technical",
-    skills: ["Python", "Java", "JavaScript", "HTML/CSS", "SQL", "Git", "AWS"],
+    label: "Automation & Performance",
+    skills: [
+      "Playwright",
+      "Playwright MCP",
+      "Selenium",
+      "Cypress",
+      "k6",
+      "JMeter",
+      "Test Automation",
+      "End-to-End Testing",
+      "Performance Testing",
+    ],
   },
   {
-    label: "Quality Assurance",
-    skills: ["Test Planning", "Manual Testing", "Automation Testing", "Bug Tracking", "Selenium", "Quality Standards"],
+    label: "Database & Integration",
+    skills: [
+      "SQL",
+      "Database Testing",
+      "API Response Validation",
+      "Microservices Testing",
+    ],
+  },
+  {
+    label: "AI-Assisted Testing",
+    skills: [
+      "Claude Code",
+      "Claude AI",
+      "AI-Assisted Test Generation",
+      "Test Analysis",
+      "MCP",
+    ],
+  },
+  {
+    label: "Tools & Collaboration",
+    skills: ["Jira", "Confluence", "Git", "GitHub", "Agile", "Scrum", "Sprint Planning"],
+  },
+  {
+    label: "Programming & Cloud",
+    skills: ["Python", "Java", "JavaScript", "HTML/CSS", "AWS"],
   },
   {
     label: "Research & AI",
-    skills: ["Machine Learning", "Deep Learning", "Computer Vision", "CNN-LSTM", "IoT Systems", "NLP", "Predictive Analytics", "Data Science"],
+    skills: [
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "CNN-LSTM",
+      "IoT Systems",
+      "NLP",
+      "Predictive Analytics",
+      "Data Science",
+    ],
   },
 ];

@@ -1,19 +1,26 @@
 "use client";
 import { motion } from "framer-motion";
+import { Bug, Gauge, Database, BrainCircuit, Wrench, Code, Microscope } from "lucide-react";
 import { skills } from "@/data/skills";
 
 const categoryColors: Record<string, string> = {
-  "Project Management": "bg-violet-100 text-violet-700",
-  Technical: "bg-blue-100 text-blue-700",
-  "Quality Assurance": "bg-emerald-100 text-emerald-700",
-  "Research & AI": "bg-amber-100 text-amber-700",
+  "API & Software Testing": "bg-violet-100 text-violet-700",
+  "Automation & Performance": "bg-blue-100 text-blue-700",
+  "Database & Integration": "bg-emerald-100 text-emerald-700",
+  "AI-Assisted Testing": "bg-amber-100 text-amber-700",
+  "Tools & Collaboration": "bg-stone-100 text-stone-700",
+  "Programming & Cloud": "bg-cyan-100 text-cyan-700",
+  "Research & AI": "bg-rose-100 text-rose-700",
 };
 
-const categoryIcons: Record<string, string> = {
-  "Project Management": "🗂️",
-  Technical: "⚙️",
-  "Quality Assurance": "✅",
-  "Research & AI": "🧠",
+const categoryIcons = {
+  "API & Software Testing": Bug,
+  "Automation & Performance": Gauge,
+  "Database & Integration": Database,
+  "AI-Assisted Testing": BrainCircuit,
+  "Tools & Collaboration": Wrench,
+  "Programming & Cloud": Code,
+  "Research & AI": Microscope,
 };
 
 export default function SkillsSection() {
@@ -39,7 +46,9 @@ export default function SkillsSection() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {skills.map((category, i) => (
+          {skills.map((category, i) => {
+            const Icon = categoryIcons[category.label as keyof typeof categoryIcons] ?? Wrench;
+            return (
             <motion.div
               key={category.label}
               initial={{ opacity: 0, y: 20 }}
@@ -49,7 +58,7 @@ export default function SkillsSection() {
               className="bg-white border border-stone-200 rounded-2xl p-6 hover:border-violet-300 hover:shadow-md transition-all"
             >
               <div className="flex items-center gap-3 mb-5">
-                <span className="text-xl">{categoryIcons[category.label]}</span>
+                <Icon className="w-5 h-5 text-violet-600" aria-hidden="true" />
                 <h3 className="text-stone-900 font-semibold">
                   {category.label}
                 </h3>
@@ -65,7 +74,8 @@ export default function SkillsSection() {
                 ))}
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

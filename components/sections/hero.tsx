@@ -48,7 +48,7 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="text-stone-500 text-xs font-semibold tracking-widest uppercase mt-3">
-            SQA Engineer · Adjunct Faculty · Researcher
+            Sr. SQA Engineer · Adjunct Faculty · Researcher
             </p>
           </motion.div>
 
@@ -58,9 +58,8 @@ export default function HeroSection() {
             transition={{ delay: 0.15, duration: 0.5 }}
             className="text-stone-600 text-base leading-relaxed max-w-md"
           >
-            SQA Engineer at ADN Telecom Limited, working with the BRAC Bank IT
-            team, and Adjunct Faculty (Industry) in CSE at United International
-            University. My interests include AI, machine learning, healthcare
+            Sr. SQA Engineer and Adjunct Faculty (Industry) in CSE at United
+            International University. My interests include AI, machine learning, healthcare
             AI, and software engineering, including LLM-generated test suites
             and test adequacy.
           </motion.p>
@@ -171,8 +170,9 @@ export default function HeroSection() {
             </div>
             <div className="col-span-2 bg-violet-600 rounded-2xl p-4 shadow-md">
               <p className="text-white text-xs font-medium mb-1">Current Role</p>
-              <p className="text-white font-semibold text-sm">SQA Engineer</p>
-              <p className="text-violet-200 text-xs mt-0.5">ADN Telecom · BRAC Bank IT client team</p>
+              <p className="text-white font-semibold text-sm">ADN Diginet Limited | BRAC Bank (Augmentation)</p>
+              <p className="text-white font-semibold text-sm">Sr. SQA Engineer</p>
+              <p className="text-violet-200 text-xs mt-0.5">Dhaka, Bangladesh | October 2026 – Present</p>
             </div>
           </div>
         </motion.div>

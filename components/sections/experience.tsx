@@ -45,12 +45,25 @@ export default function ExperienceSection() {
                   <div className="bg-white border border-stone-200 rounded-2xl p-6 hover:border-violet-300 hover:shadow-md transition-all group">
                     <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                       <div>
-                        <h3 className="text-stone-900 font-semibold group-hover:text-violet-700 transition-colors">
-                          {item.role}
-                        </h3>
-                        <p className="text-violet-600 text-sm mt-0.5">
-                          {item.company}
-                        </p>
+                        {item.employerFirst ? (
+                          <>
+                            <h3 className="text-stone-900 font-semibold group-hover:text-violet-700 transition-colors">
+                              {item.company}
+                            </h3>
+                            <p className="text-violet-600 text-sm mt-0.5">
+                              {item.role}
+                            </p>
+                          </>
+                        ) : (
+                          <>
+                            <h3 className="text-stone-900 font-semibold group-hover:text-violet-700 transition-colors">
+                              {item.role}
+                            </h3>
+                            <p className="text-violet-600 text-sm mt-0.5">
+                              {item.company}
+                            </p>
+                          </>
+                        )}
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
                         <span
@@ -68,9 +81,19 @@ export default function ExperienceSection() {
                       </div>
                     </div>
 
-                    <p className="text-stone-500 text-sm leading-relaxed mb-4">
-                      {item.description}
-                    </p>
+                    {item.description && (
+                      <p className="text-stone-500 text-sm leading-relaxed mb-3">
+                        {item.description}
+                      </p>
+                    )}
+
+                    {item.highlights && (
+                      <ul className="list-disc pl-5 space-y-1 text-stone-500 text-sm leading-relaxed mb-4 marker:text-violet-400">
+                        {item.highlights.map((highlight) => (
+                          <li key={highlight}>{highlight}</li>
+                        ))}
+                      </ul>
+                    )}
 
                     <div className="flex flex-wrap gap-2">
                       {item.tags.map((tag) => (

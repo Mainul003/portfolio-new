@@ -67,8 +67,24 @@ export default function ResearchSection() {
               className="bg-white border border-stone-200 rounded-2xl p-6 flex flex-col gap-4 hover:border-violet-300 hover:shadow-md transition-all group"
             >
               <div className="flex items-start justify-between gap-3">
-                <span className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200">
-                  <span className="w-1.5 h-1.5 bg-amber-400 rounded-full animate-pulse" />
+                <span
+                  className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full border ${
+                    paper.status === "Published"
+                      ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+                      : paper.status === "Research Project"
+                        ? "bg-stone-100 text-stone-600 border-stone-200"
+                        : "bg-amber-50 text-amber-700 border-amber-200"
+                  }`}
+                >
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full ${
+                      paper.status === "Published"
+                        ? "bg-emerald-500"
+                        : paper.status === "Research Project"
+                          ? "bg-stone-400"
+                          : "bg-amber-400 animate-pulse"
+                    }`}
+                  />
                   {paper.status}
                 </span>
                 {paper.paperId && (

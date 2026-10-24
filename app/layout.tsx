@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Md Mainul Islam | SQA Engineer · Adjunct Faculty · Researcher",
+  title: "Md Mainul Islam | Sr. SQA Engineer · Adjunct Faculty · Researcher",
   description:
-    "Portfolio of Md Mainul Islam, SQA Engineer at ADN Telecom Limited working with the BRAC Bank IT team, and Adjunct Faculty (Industry) at United International University. Research interests include healthcare AI and software testing.",
+    "Portfolio of Md Mainul Islam, Sr. SQA Engineer at ADN Diginet Limited assigned to BRAC Bank (Augmentation), and Adjunct Faculty (Industry) at United International University. Research interests include healthcare AI and software testing.",
   keywords: [
     "Mainul Islam",
     "Software Quality Assurance",
-    "SQA Engineer",
+    "Sr. SQA Engineer",
     "UIU",
     "Software Testing",
     "Machine Learning",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Md Mainul Islam" }],
   openGraph: {
-    title: "Md Mainul Islam | SQA Engineer · Adjunct Faculty · Researcher",
+    title: "Md Mainul Islam | Sr. SQA Engineer · Adjunct Faculty · Researcher",
     description:
       "Portfolio — software quality assurance, teaching, research, publications, and achievements.",
     type: "website",

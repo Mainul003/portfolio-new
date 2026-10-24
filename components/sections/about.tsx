@@ -40,8 +40,8 @@ export default function AboutSection() {
               <span className="text-violet-600 font-semibold">
                 Md Mainul Islam
               </span>
-              , an SQA Engineer at ADN Telecom Limited, working with the BRAC
-              Bank IT team through a staff-augmentation arrangement, and an{" "}
+              , Sr. SQA Engineer at ADN Diginet Limited, assigned to BRAC
+              Bank (Augmentation), and an{" "}
               <span className="text-stone-900 font-medium">
                 Adjunct Faculty (Industry)
               </span>{" "}

@@ -24,18 +24,6 @@ export const papers: Paper[] = [
     ],
     subjectArea: "Healthcare AI, Machine Learning, Predictive Analytics",
   },
-  {
-    title: "Depth-Derived Geometric Feature Sequences for Elderly Fall Detection Using a CNN-LSTM Network",
-    conference: "BECITHCON 2026",
-    location: "IUBAT, Dhaka, Bangladesh",
-    status: "Under Review",
-    paperId: "395",
-    submittedDate: "16 June 2026",
-    notificationDate: "31 July 2026",
-    cameraReadyDate: "16 August 2026",
-    conferenceDate: "4–5 September 2026",
-    subjectArea: "Biosignal Recording, Processing, Pattern Recognition and Machine Learning",
-  },
 ];
 
 export const researchTags = [
