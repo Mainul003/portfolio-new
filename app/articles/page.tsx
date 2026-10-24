@@ -27,17 +27,17 @@ export default function ArticlesPage() {
   }, [activeCategory, query]);
 
   return (
-    <div className="min-h-screen bg-slate-950 pt-24 pb-20">
+    <div className="min-h-screen bg-stone-50 pt-24 pb-20">
       <div className="max-container px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-2">
+          <p className="text-violet-600 text-sm font-medium tracking-widest uppercase mb-2">
             Research Writing
           </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-stone-900 mb-4">
             All Articles
           </h1>
-          <p className="text-slate-400 max-w-xl mx-auto">
+          <p className="text-stone-500 max-w-xl mx-auto">
             {articles.length > 0
               ? `${articles.length} in-depth articles on AI, machine learning, and smart systems`
               : "Articles are being imported — check back shortly."}
@@ -46,13 +46,13 @@ export default function ArticlesPage() {
 
         {/* Search */}
         <div className="max-w-md mx-auto mb-8 relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
           <input
             type="text"
             placeholder="Search articles..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-slate-900 border border-slate-800 rounded-full pl-11 pr-5 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-violet-500/50 transition-colors"
+            className="w-full bg-white border border-stone-200 rounded-full pl-11 pr-5 py-3 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-violet-400 focus:ring-1 focus:ring-violet-400/20 transition-colors shadow-sm"
           />
         </div>
 
@@ -65,7 +65,7 @@ export default function ArticlesPage() {
               className={`text-xs px-4 py-2 rounded-full border transition-all ${
                 activeCategory === cat.label
                   ? "bg-violet-600 border-violet-600 text-white"
-                  : "bg-slate-900 border-slate-800 text-slate-400 hover:border-violet-500/40 hover:text-violet-300"
+                  : "bg-white border-stone-200 text-stone-500 hover:border-violet-300 hover:text-violet-700"
               }`}
             >
               {cat.label}
@@ -79,20 +79,20 @@ export default function ArticlesPage() {
         {/* Articles grid */}
         {articles.length === 0 ? (
           <div className="text-center py-24">
-            <BookOpen className="w-16 h-16 text-slate-800 mx-auto mb-4" />
-            <p className="text-slate-500 text-lg mb-2">Articles loading...</p>
-            <p className="text-slate-600 text-sm">
+            <BookOpen className="w-16 h-16 text-stone-300 mx-auto mb-4" />
+            <p className="text-stone-500 text-lg mb-2">Articles loading...</p>
+            <p className="text-stone-400 text-sm">
               Run the scrape script to import all 70 articles from
               researchbymainul.com
             </p>
           </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-24">
-            <p className="text-slate-500">No articles match your search.</p>
+            <p className="text-stone-500">No articles match your search.</p>
           </div>
         ) : (
           <>
-            <p className="text-slate-600 text-sm mb-6">
+            <p className="text-stone-400 text-sm mb-6">
               {filtered.length} article{filtered.length !== 1 ? "s" : ""}
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -105,25 +105,25 @@ export default function ArticlesPage() {
                 >
                   <Link
                     href={`/articles/${article.slug}`}
-                    className="group bg-slate-900 border border-slate-800 rounded-2xl p-5 flex flex-col gap-3 hover:border-violet-500/40 transition-all h-full block"
+                    className="group bg-white border border-stone-200 rounded-2xl p-5 flex flex-col gap-3 hover:border-violet-300 hover:shadow-md transition-all h-full block"
                   >
                     <div className="flex items-start justify-between gap-2">
-                      <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/20 line-clamp-1">
+                      <span className="text-xs font-medium px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200 line-clamp-1">
                         {article.category}
                       </span>
-                      <span className="text-xs text-slate-600 flex items-center gap-1 shrink-0">
+                      <span className="text-xs text-stone-400 flex items-center gap-1 shrink-0">
                         <Clock className="w-3 h-3" />
                         {article.readTime}
                       </span>
                     </div>
-                    <h2 className="text-slate-100 font-semibold text-sm leading-snug line-clamp-2 group-hover:text-violet-300 transition-colors flex-1">
+                    <h2 className="text-stone-900 font-semibold text-sm leading-snug line-clamp-2 group-hover:text-violet-700 transition-colors flex-1">
                       {article.title}
                     </h2>
-                    <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">
+                    <p className="text-stone-500 text-xs line-clamp-2 leading-relaxed">
                       {article.excerpt}
                     </p>
-                    <div className="flex items-center justify-between pt-2 border-t border-slate-800">
-                      <span className="text-xs text-slate-600 flex items-center gap-1">
+                    <div className="flex items-center justify-between pt-2 border-t border-stone-100">
+                      <span className="text-xs text-stone-400 flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
                         {new Date(article.date).toLocaleDateString("en-US", {
                           year: "numeric",
@@ -131,7 +131,7 @@ export default function ArticlesPage() {
                           day: "numeric",
                         })}
                       </span>
-                      <span className="text-xs text-violet-400 flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span className="text-xs text-violet-600 flex items-center gap-1 group-hover:gap-2 transition-all">
                         Read <ArrowRight className="w-3 h-3" />
                       </span>
                     </div>

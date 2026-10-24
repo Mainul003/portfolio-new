@@ -47,12 +47,12 @@ export default async function ArticleDetailPage({ params }: Props) {
     .filter(Boolean) as NonNullable<ReturnType<typeof getArticleBySlug>>[];
 
   return (
-    <div className="min-h-screen bg-slate-950 pt-24 pb-20">
+    <div className="min-h-screen bg-stone-50 pt-24 pb-20">
       <div className="max-w-3xl mx-auto px-4">
         {/* Back */}
         <Link
           href="/articles"
-          className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-violet-400 transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-sm text-stone-500 hover:text-violet-600 transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           All Articles
@@ -61,14 +61,14 @@ export default async function ArticleDetailPage({ params }: Props) {
         {/* Header */}
         <header className="mb-10">
           <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span className="text-xs font-medium px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/20">
+            <span className="text-xs font-medium px-3 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200">
               {meta.category}
             </span>
-            <span className="text-xs text-slate-600 flex items-center gap-1">
+            <span className="text-xs text-stone-400 flex items-center gap-1">
               <Clock className="w-3 h-3" />
               {meta.readTime}
             </span>
-            <span className="text-xs text-slate-600 flex items-center gap-1">
+            <span className="text-xs text-stone-400 flex items-center gap-1">
               <Calendar className="w-3 h-3" />
               {new Date(meta.date).toLocaleDateString("en-US", {
                 year: "numeric",
@@ -77,18 +77,18 @@ export default async function ArticleDetailPage({ params }: Props) {
               })}
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-100 leading-tight mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-stone-900 leading-tight mb-4">
             {meta.title}
           </h1>
-          <p className="text-slate-400 leading-relaxed">{meta.excerpt}</p>
+          <p className="text-stone-500 leading-relaxed">{meta.excerpt}</p>
 
           {meta.tags && meta.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 mt-5">
-              <Tag className="w-3.5 h-3.5 text-slate-600 mt-1" />
+              <Tag className="w-3.5 h-3.5 text-stone-400 mt-1" />
               {meta.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-2.5 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-500"
+                  className="text-xs px-2.5 py-1 rounded-full bg-stone-100 border border-stone-200 text-stone-500"
                 >
                   {tag}
                 </span>
@@ -98,11 +98,11 @@ export default async function ArticleDetailPage({ params }: Props) {
         </header>
 
         {/* Body */}
-        <article className="prose prose-invert prose-slate max-w-none prose-headings:text-slate-100 prose-p:text-slate-300 prose-p:leading-relaxed prose-a:text-violet-400 prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-100 prose-code:text-violet-300 prose-code:bg-slate-900 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-slate-900 prose-pre:border prose-pre:border-slate-800 prose-blockquote:border-violet-500 prose-blockquote:text-slate-400 prose-hr:border-slate-800 mb-14">
+        <article className="prose prose-stone max-w-none prose-headings:text-stone-900 prose-p:text-stone-700 prose-p:leading-relaxed prose-a:text-violet-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-stone-900 prose-code:text-violet-700 prose-code:bg-violet-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-pre:bg-stone-100 prose-pre:border prose-pre:border-stone-200 prose-blockquote:border-violet-400 prose-blockquote:text-stone-500 prose-hr:border-stone-200 mb-14">
           <MDXRemote source={content} />
         </article>
 
-        <hr className="border-slate-800 mb-10" />
+        <hr className="border-stone-200 mb-10" />
 
         {/* Source link */}
         <div className="mb-10 flex items-center gap-2 text-sm">
@@ -110,7 +110,7 @@ export default async function ArticleDetailPage({ params }: Props) {
             href={`https://researchbymainul.com/article/${slug}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-violet-400 hover:text-violet-300 transition-colors"
+            className="inline-flex items-center gap-1.5 text-violet-600 hover:text-violet-700 transition-colors"
           >
             <ExternalLink className="w-3.5 h-3.5" />
             View original on researchbymainul.com
@@ -120,7 +120,7 @@ export default async function ArticleDetailPage({ params }: Props) {
         {/* Related */}
         {related.length > 0 && (
           <div>
-            <h2 className="text-lg font-semibold text-slate-100 mb-5">
+            <h2 className="text-lg font-semibold text-stone-900 mb-5">
               Related Articles
             </h2>
             <div className="grid sm:grid-cols-3 gap-4">
@@ -128,12 +128,12 @@ export default async function ArticleDetailPage({ params }: Props) {
                 <Link
                   key={r.meta.slug}
                   href={`/articles/${r.meta.slug}`}
-                  className="group bg-slate-900 border border-slate-800 rounded-xl p-4 hover:border-violet-500/30 transition-all"
+                  className="group bg-white border border-stone-200 rounded-xl p-4 hover:border-violet-300 hover:shadow-sm transition-all"
                 >
-                  <span className="text-xs text-violet-400 mb-2 block">
+                  <span className="text-xs text-violet-600 mb-2 block">
                     {r.meta.category}
                   </span>
-                  <p className="text-sm text-slate-300 font-medium leading-snug line-clamp-2 group-hover:text-violet-300 transition-colors">
+                  <p className="text-sm text-stone-700 font-medium leading-snug line-clamp-2 group-hover:text-violet-700 transition-colors">
                     {r.meta.title}
                   </p>
                 </Link>

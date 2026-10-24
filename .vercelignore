@@ -1,0 +1,6 @@
+New/
+.playwright-mcp/
+.git/
+node_modules/
+.next/
+.vercel/

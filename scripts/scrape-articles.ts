@@ -42,8 +42,8 @@ async function main() {
   console.log("📚 Collecting article list...");
   const summaries: ArticleSummary[] = [];
 
-  await page.goto(`${BASE_URL}/article`, { waitUntil: "networkidle" });
-  await sleep(1000);
+  await page.goto(`${BASE_URL}/article`, { waitUntil: "domcontentloaded", timeout: 60000 });
+  await sleep(2000);
 
   // Click each page button 1..24
   for (let pageNum = 1; pageNum <= 24; pageNum++) {
@@ -51,8 +51,7 @@ async function main() {
       const btn = page.getByRole("button", { name: String(pageNum), exact: true });
       if ((await btn.count()) === 0) break;
       await btn.click();
-      await page.waitForLoadState("networkidle");
-      await sleep(800);
+      await sleep(2000);
     }
 
     const found = await page.evaluate((): ArticleSummary[] => {
@@ -104,8 +103,8 @@ async function main() {
 
   for (const s of unique) {
     try {
-      await page.goto(`${BASE_URL}/article/${s.slug}`, { waitUntil: "networkidle" });
-      await sleep(400);
+      await page.goto(`${BASE_URL}/article/${s.slug}`, { waitUntil: "domcontentloaded", timeout: 60000 });
+      await sleep(800);
 
       const detail = await page.evaluate(() => {
         const tagSection = Array.from(document.querySelectorAll("h3, h4")).find(
