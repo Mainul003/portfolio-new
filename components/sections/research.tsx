@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const academicProfiles = [
   { label: "Google Scholar", href: "https://scholar.google.com/citations?hl=en&user=tCo0nkkAAAAJ" },
-  { label: "ResearchGate", href: "https://www.researchgate.net/publication/407431330_Artificial_Intelligence_in_Healthcare_Predictive_Analytics_for_Early_Detection_of_Chronic_Diseases" },
+  { label: "ResearchGate", href: "https://www.researchgate.net/profile/Md-Mainul-Islam-7?ev=hdr_xprf" },
   { label: "ASE 2026 Profile", href: "https://conf.researchr.org/profile/ase-2026/mdmainulislam" },
   { label: "Research Conference Profile", href: "https://conf.researchr.org/profile/mdmainulislam" },
 ];
