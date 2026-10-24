@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Trophy, GraduationCap, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { achievements } from "@/data/achievements";
 
 const tabs = [
@@ -79,25 +80,46 @@ export default function AchievementsSection() {
             transition={{ duration: 0.3 }}
           >
             {activeTab === "certifications" ? (
-              <div className="grid md:grid-cols-3 gap-5 max-w-2xl mx-auto">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
                 {filtered.map((item) => (
-                  <div
+                  <button
                     key={item.title}
-                    className="bg-white border border-stone-200 rounded-2xl p-6 text-center hover:border-violet-300 hover:shadow-md transition-all"
+                    type="button"
+                    onClick={() => openLightbox(withImages.indexOf(item))}
+                    aria-label={`View ${item.title} certificate`}
+                    className="group overflow-hidden rounded-2xl border border-stone-200 bg-white text-left transition-all hover:border-violet-300 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2"
                   >
-                    <div className="w-14 h-14 rounded-full bg-violet-50 border border-violet-200 flex items-center justify-center mx-auto mb-4">
-                      <Award className="w-6 h-6 text-violet-600" />
+                    <div className="relative aspect-[4/3] overflow-hidden border-b border-stone-100 bg-stone-50 p-3">
+                      {item.imagePath && (
+                        <Image
+                          src={item.imagePath}
+                          alt={`${item.title} certificate`}
+                          fill
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.03]"
+                        />
+                      )}
                     </div>
-                    <h3 className="text-stone-900 font-semibold">
-                      {item.title}
-                    </h3>
-                    <p className="text-stone-400 text-sm mt-1">
-                      {item.subtitle}
-                    </p>
-                    <span className="inline-block mt-3 text-xs px-3 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200">
-                      {item.badge}
-                    </span>
-                  </div>
+                    <div className="p-4">
+                      <div className="flex items-start justify-between gap-3">
+                        <div>
+                          <h3 className="font-semibold text-stone-900 transition-colors group-hover:text-violet-700">
+                            {item.title}
+                          </h3>
+                          <p className="mt-1 text-sm text-stone-500">
+                            {item.subtitle}
+                          </p>
+                        </div>
+                        <Award className="mt-0.5 h-5 w-5 shrink-0 text-violet-500" />
+                      </div>
+                      <span className="mt-3 inline-block rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-medium text-violet-700">
+                        {item.badge}
+                      </span>
+                      <p className="mt-3 text-xs font-medium text-stone-400 group-hover:text-violet-600">
+                        Click to view certificate
+                      </p>
+                    </div>
+                  </button>
                 ))}
               </div>
             ) : (
