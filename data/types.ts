@@ -10,11 +10,13 @@ export interface Article {
 
 export interface Paper {
   title: string;
-  conference: string;
-  location: string;
+  conference?: string;
+  location?: string;
   status: "Under Review" | "Published" | "Accepted";
+  description?: string;
+  links?: { label: string; href: string }[];
   paperId?: string;
-  submittedDate: string;
+  submittedDate?: string;
   notificationDate?: string;
   cameraReadyDate?: string;
   conferenceDate?: string;

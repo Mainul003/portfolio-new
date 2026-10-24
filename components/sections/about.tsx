@@ -1,17 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-import { MapPin, Briefcase, GraduationCap, BookOpen } from "lucide-react";
+import { MapPin, GraduationCap, BookOpen } from "lucide-react";
 
 const stats = [
-  { label: "Research Articles", value: "70+", icon: BookOpen },
-  { label: "Years of Experience", value: "5+", icon: Briefcase },
+  { label: "Articles & blog posts", value: "70+", icon: BookOpen },
+  { label: "Education milestones", value: "3", icon: GraduationCap },
   { label: "GPA (Summa Cum Laude)", value: "3.92", icon: GraduationCap },
-  { label: "Conference Papers", value: "2", icon: BookOpen },
 ];
 
 export default function AboutSection() {
   return (
-    <section id="about" className="section-padding bg-slate-900/30">
+    <section id="about" className="section-padding bg-stone-100/60">
       <div className="max-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -20,10 +19,10 @@ export default function AboutSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-2">
+          <p className="text-violet-600 text-sm font-medium tracking-widest uppercase mb-2">
             About Me
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-100">
+          <h2 className="text-3xl md:text-4xl font-bold text-stone-900">
             Who I Am
           </h2>
         </motion.div>
@@ -36,35 +35,33 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
             className="space-y-5"
           >
-            <p className="text-slate-300 leading-relaxed text-lg">
-              I'm{" "}
-              <span className="text-violet-400 font-semibold">
+            <p className="text-stone-700 leading-relaxed text-lg">
+              I&apos;m{" "}
+              <span className="text-violet-600 font-semibold">
                 Md Mainul Islam
               </span>
-              , an AI researcher and software professional based in Bangladesh.
-              Currently, I serve as an{" "}
-              <span className="text-slate-100 font-medium">
-                Adjunct Lecturer
+              , an SQA Engineer at ADN Telecom Limited, working with the BRAC
+              Bank IT team through a staff-augmentation arrangement, and an{" "}
+              <span className="text-stone-900 font-medium">
+                Adjunct Faculty (Industry)
               </span>{" "}
-              at United International University and{" "}
-              <span className="text-slate-100 font-medium">
-                Project Manager
-              </span>{" "}
-              at WebAlive, an Australian digital agency.
+              in the Department of Computer Science and Engineering at United
+              International University, where I teach System Analysis and
+              Design Laboratory (CSE 3412).
             </p>
-            <p className="text-slate-400 leading-relaxed">
-              My research spans machine learning, deep learning, IoT, and their
-              applications in healthcare, agriculture, environmental monitoring,
-              and smart systems. I graduated Summa Cum Laude from UIU with a
-              BSc in CSE, maintaining a 3.92 GPA throughout.
+            <p className="text-stone-500 leading-relaxed">
+              My interests span Artificial Intelligence, Machine Learning,
+              Healthcare AI, and Software Engineering. My research explores
+              AI-driven healthcare prediction and software testing, including
+              LLM-generated test suites and test adequacy. I graduated Summa
+              Cum Laude from UIU with a BSc in CSE and a 3.92 CGPA.
             </p>
-            <p className="text-slate-400 leading-relaxed">
-              Beyond research, I write extensively on AI topics — with over 70
-              published articles exploring the frontiers of artificial
-              intelligence and its real-world impact.
+            <p className="text-stone-500 leading-relaxed">
+              My writing also includes more than 70 articles and blog posts;
+              these are distinct from my peer-reviewed research publications.
             </p>
 
-            <div className="flex items-center gap-2 text-slate-500 text-sm pt-2">
+            <div className="flex items-center gap-2 text-stone-400 text-sm pt-2">
               <MapPin className="w-4 h-4 text-violet-500" />
               <span>Dhaka, Bangladesh (Remote-friendly)</span>
             </div>
@@ -82,16 +79,16 @@ export default function AboutSection() {
               return (
                 <div
                   key={stat.label}
-                  className="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col gap-3 hover:border-violet-500/30 transition-colors"
+                  className="bg-white border border-stone-200 rounded-2xl p-6 flex flex-col gap-3 hover:border-violet-300 hover:shadow-sm transition-all"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-violet-400" />
+                  <div className="w-10 h-10 rounded-xl bg-violet-50 flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-violet-600" />
                   </div>
                   <div>
                     <p className="text-2xl font-bold gradient-text">
                       {stat.value}
                     </p>
-                    <p className="text-slate-500 text-sm mt-0.5">
+                    <p className="text-stone-400 text-sm mt-0.5">
                       {stat.label}
                     </p>
                   </div>

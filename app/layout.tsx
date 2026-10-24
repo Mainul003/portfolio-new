@@ -15,23 +15,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Md Mainul Islam | Researcher · Project Manager · Educator",
+  title: "Md Mainul Islam | SQA Engineer · Adjunct Faculty · Researcher",
   description:
-    "Portfolio of Md Mainul Islam — AI researcher, Project Manager at WebAlive Australia, and Adjunct Lecturer at United International University. Expert in machine learning, IoT, and smart systems.",
+    "Portfolio of Md Mainul Islam, SQA Engineer at ADN Telecom Limited working with the BRAC Bank IT team, and Adjunct Faculty (Industry) at United International University. Research interests include healthcare AI and software testing.",
   keywords: [
     "Mainul Islam",
-    "AI Researcher",
-    "Project Manager",
+    "Software Quality Assurance",
+    "SQA Engineer",
     "UIU",
-    "WebAlive",
+    "Software Testing",
     "Machine Learning",
     "Deep Learning",
   ],
   authors: [{ name: "Md Mainul Islam" }],
   openGraph: {
-    title: "Md Mainul Islam | Researcher · Project Manager · Educator",
+    title: "Md Mainul Islam | SQA Engineer · Adjunct Faculty · Researcher",
     description:
-      "Unified portfolio — research, experience, publications, and achievements.",
+      "Portfolio — software quality assurance, teaching, research, publications, and achievements.",
     type: "website",
   },
 };
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-100`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-stone-50 text-stone-900`}
       >
         <Navbar />
         {children}
